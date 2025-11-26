@@ -28,7 +28,7 @@ export default function HeadlinesRightColumnClient({ items }: HeadlinesRightColu
                             />
                         )}
                     </div>
-                    <a href={`/post/${it.slug}`} className="mt-3 block text-[#0e1d3d] font-semibold leading-snug hover:text-red-500">
+                    <a href={`/${it.slug}`} className="mt-3 block text-[#0e1d3d] font-semibold leading-snug hover:text-red-500">
                         {it.title}
                     </a>
                     <div className="mt-1 text-xs text-gray-500">

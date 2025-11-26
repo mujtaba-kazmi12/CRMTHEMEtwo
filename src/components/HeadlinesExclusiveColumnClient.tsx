@@ -20,7 +20,7 @@ export default function HeadlinesExclusiveColumnClient({ articles }: HeadlinesEx
                 {articles.map((article) => (
                     <a
                         key={article.id}
-                        href={`/post/${article.slug}`}
+                        href={`/${article.slug}`}
                         className="flex gap-4 cursor-pointer hover:opacity-80 transition-opacity"
                     >
                         {/* Article Image */}

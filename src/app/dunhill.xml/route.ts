@@ -7,6 +7,10 @@ export async function GET() {
 <?xml-stylesheet type="text/xsl" href="/sitemap-style.xsl"?>
 <sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <sitemap>
+    <loc>${baseUrl}/dunhill-categories.xml</loc>
+    <lastmod>${new Date().toISOString()}</lastmod>
+  </sitemap>
+  <sitemap>
     <loc>${baseUrl}/dunhill-posts.xml</loc>
     <lastmod>${new Date().toISOString()}</lastmod>
   </sitemap>

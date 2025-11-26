@@ -24,7 +24,7 @@ export async function GET() {
 
                     return `
   <url>
-    <loc>${baseUrl}/post/${post.slug}</loc>
+    <loc>${baseUrl}/${post.slug}</loc>
     <news:news>
       <news:publication>
         <news:name>Dunhill News</news:name>

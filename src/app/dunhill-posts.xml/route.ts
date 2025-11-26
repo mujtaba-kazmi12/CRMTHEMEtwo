@@ -35,7 +35,7 @@ export async function GET() {
                 .map((post) => {
                     return `
   <url>
-    <loc>${baseUrl}/post/${post.slug}</loc>
+    <loc>${baseUrl}/${post.slug}</loc>
     <lastmod>${new Date(post.updatedAt || post.createdAt).toISOString()}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

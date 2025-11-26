@@ -44,7 +44,7 @@ export default function CategoryColumn({ category, articles }: CategoryColumnPro
                     <span className="sr-only">Image placeholder</span>
                   )}
                 </div>
-                <a href={article.slug ? `/post/${article.slug}` : '#'}>
+                <a href={article.slug ? `/${article.slug}` : '#'}>
                   <h4 className="text-[#0e1d3d] font-semibold text-base leading-tight hover:text-red-500 cursor-pointer">
                     {article.title}
                   </h4>
@@ -74,7 +74,7 @@ export default function CategoryColumn({ category, articles }: CategoryColumnPro
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <a href={article.slug ? `/post/${article.slug}` : '#'}>
+                  <a href={article.slug ? `/${article.slug}` : '#'}>
                     <h4 className="text-[#0e1d3d] font-medium text-sm leading-tight hover:text-red-500 cursor-pointer">
                       {article.title}
                     </h4>

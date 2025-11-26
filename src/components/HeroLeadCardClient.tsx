@@ -18,7 +18,7 @@ type HeroLeadCardClientProps = {
 
 export default function HeroLeadCardClient({ post }: HeroLeadCardClientProps) {
     return (
-        <Link href={`/post/${post.slug}`} className="block">
+        <Link href={`/${post.slug}`} className="block">
             <article className="bg-white rounded-md overflow-hidden shadow-sm hover:shadow-md transition-shadow cursor-pointer">
                 {/* Image */}
                 {post.imageSrc ? (

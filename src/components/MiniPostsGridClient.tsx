@@ -46,7 +46,7 @@ export default function MiniPostsGridClient({ items }: MiniPostsGridClientProps)
                                     <div className="min-w-0">
                                         <div className="text-xs text-red-500 font-semibold">{it.category}</div>
                                         <a
-                                            href={`/post/${it.slug}`}
+                                            href={`/${it.slug}`}
                                             className="mt-1 block text-sm font-semibold text-[#0e1d3d] leading-snug hover:text-red-500"
                                         >
                                             {it.title}

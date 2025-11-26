@@ -76,7 +76,7 @@ export default async function HeroHotWeekColumn({
             <div className="pr-12">
               <div className="text-xs text-red-500 font-semibold">{it.category}</div>
               <a
-                href={`/post/${it.slug}`}
+                href={`/${it.slug}`}
                 className="block text-sm font-semibold text-[#0e1d3d] leading-snug hover:text-red-500"
               >
                 {it.title}

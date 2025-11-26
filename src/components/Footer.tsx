@@ -135,7 +135,7 @@ export default async function Footer() {
                 </li>
                 {categories.map((category) => (
                   <li key={category._id}>
-                    <a href={`/${category.slug}`} className="hover:text-red-400">
+                    <a href={`/categories/${category.slug}`} className="hover:text-red-400">
                       {category.name}
                     </a>
                   </li>
@@ -152,7 +152,7 @@ export default async function Footer() {
               <ul className="space-y-3">
                 {posts.map((post) => (
                   <li key={post._id} className="text-sm text-gray-300">
-                    <a href={`/post/${post.slug}`} className="block hover:text-red-400">
+                    <a href={`/${post.slug}`} className="block hover:text-red-400">
                       {post.blogContent.title}
                     </a>
                     <div className="mt-2 h-[2px] w-20 bg-gray-500/50" />

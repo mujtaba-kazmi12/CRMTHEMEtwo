@@ -19,7 +19,7 @@ export default function ArticleCard({ title, image, slug }: ArticleCardProps) {
   );
 
   if (slug) {
-    return <a href={`/post/${slug}`}>{content}</a>;
+    return <a href={`/${slug}`}>{content}</a>;
   }
 
   return content;

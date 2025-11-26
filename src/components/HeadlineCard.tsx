@@ -48,7 +48,7 @@ export default function HeadlineCard({
   );
 
   if (slug) {
-    return <a href={`/post/${slug}`}>{content}</a>;
+    return <a href={`/${slug}`}>{content}</a>;
   }
 
   return content;

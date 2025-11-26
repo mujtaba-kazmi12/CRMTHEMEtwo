@@ -128,7 +128,7 @@ export default function Header({ categories = [] }: HeaderProps) {
     { label: "INICIO", href: "/", dropdown: false },
     ...sortedCategories.map((cat) => ({
       label: cat.name,
-      href: `/${cat.slug}`,
+      href: `/categories/${cat.slug}`,
       dropdown: false,
     })),
   ];
