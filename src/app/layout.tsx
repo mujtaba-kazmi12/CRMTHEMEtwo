@@ -9,11 +9,15 @@ import SEO from "../models/SEO";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 async function fetchSEOMetadata() {
@@ -87,6 +91,27 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        {/* Critical CSS for above-the-fold content */}
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            :root{--background:#ffffff;--foreground:#171717}
+            body{background:var(--background);color:var(--foreground);font-family:Arial,Helvetica,sans-serif;margin:0;padding:0}
+            *{box-sizing:border-box}
+            .antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+          `
+        }} />
+        {/* DNS Prefetch and Preconnect for external resources */}
+        <link rel="dns-prefetch" href="https://teacuerdas.com" />
+        <link rel="preconnect" href="https://teacuerdas.com" crossOrigin="anonymous" />
+        {/* Firebase Storage for images */}
+        <link rel="dns-prefetch" href="https://firebasestorage.googleapis.com" />
+        <link rel="preconnect" href="https://firebasestorage.googleapis.com" crossOrigin="anonymous" />
+        {/* Google Fonts */}
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

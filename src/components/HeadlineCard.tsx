@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type HeadlineCardProps = {
   imageSrc?: string;
   category: string;
@@ -7,6 +9,7 @@ type HeadlineCardProps = {
   imageWidth?: number;
   imageHeight?: number;
   slug?: string;
+  priority?: boolean;
 };
 
 export default function HeadlineCard({
@@ -18,11 +21,12 @@ export default function HeadlineCard({
   imageWidth,
   imageHeight,
   slug,
+  priority = false,
 }: HeadlineCardProps) {
   const fixedSize = typeof imageWidth === "number" && typeof imageHeight === "number";
   const containerClass = fixedSize
     ? "bg-gray-300 rounded overflow-hidden mx-auto"
-    : "bg-gray-300 rounded aspect-[16/9] overflow-hidden w-full";
+    : "relative bg-gray-300 rounded aspect-[16/9] overflow-hidden w-full";
   const containerStyle = fixedSize
     ? { width: `${imageWidth}px`, height: `${imageHeight}px` }
     : undefined;
@@ -31,7 +35,19 @@ export default function HeadlineCard({
     <article className="flex flex-col max-w-full">
       <div className={containerClass} style={containerStyle}>
         {imageSrc && (
-          <img src={imageSrc} alt={title} className="w-full h-full object-cover" />
+          fixedSize ? (
+            <img src={imageSrc} alt={title} className="w-full h-full object-cover" />
+          ) : (
+            <Image
+              src={imageSrc}
+              alt={title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority={priority}
+              fetchPriority={priority ? "high" : "auto"}
+            />
+          )
         )}
       </div>
       <div className="mt-3">

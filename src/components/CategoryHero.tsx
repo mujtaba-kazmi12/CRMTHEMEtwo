@@ -33,6 +33,7 @@ export default function CategoryHero({ category, posts }: CategoryHeroProps) {
               imageSrc={p.imageSrc}
               date={p.date ? new Date(p.date).toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' }) : undefined}
               slug={p.slug}
+              priority={i === 0}
             />
           ))}
         </div>

@@ -31,7 +31,7 @@ export default function HeadlinesMiddleColumn({
   return (
     <div className="space-y-8">
       {items.map((it, idx) => (
-        <HeadlineCard key={idx} {...it} />
+        <HeadlineCard key={idx} {...it} priority={idx === 0} />
       ))}
     </div>
   );
