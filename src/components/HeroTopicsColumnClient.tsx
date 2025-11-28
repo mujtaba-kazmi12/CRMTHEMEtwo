@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 type TopicItem = {
     title: string;
@@ -41,9 +42,9 @@ function MoreDropdown({ tabs }: { tabs: CategoryTab[] }) {
                                 <ul className="py-2 min-w-[140px]">
                                     {tabs.map((c) => (
                                         <li key={c.slug}>
-                                            <a href={`/categories/${c.slug}`} className="block px-4 py-2 text-[#0e1d3d] hover:bg-[#f5f3f0]">
+                                            <Link href={`/categories/${c.slug}`} className="block px-4 py-2 text-[#0e1d3d] hover:bg-[#f5f3f0]">
                                                 {c.name}
-                                            </a>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
@@ -73,7 +74,7 @@ export default function HeroTopicsColumnClient({
                     <h3 className="text-[#0e1d3d] font-bold">{title}</h3>
                     <nav className="hidden md:flex items-center gap-4 text-xs text-[#0e1d3d]/70">
                         {regularTabs.map((t) => (
-                            <a key={t.slug} href={`/categories/${t.slug}`} className="hover:text-red-500">{t.name}</a>
+                            <Link key={t.slug} href={`/categories/${t.slug}`} className="hover:text-red-500">{t.name}</Link>
                         ))}
                         {moreTabs.length > 0 && <MoreDropdown tabs={moreTabs} />}
                     </nav>
@@ -95,9 +96,9 @@ export default function HeroTopicsColumnClient({
                     ) : (
                         <div className="bg-gray-300 aspect-[16/9] rounded" />
                     )}
-                    <a href={`/${featured.slug}`} className="mt-3 block text-[#0e1d3d] font-semibold leading-snug">
+                    <Link href={`/${featured.slug}`} className="mt-3 block text-[#0e1d3d] font-semibold leading-snug">
                         {featured.title}
-                    </a>
+                    </Link>
                     <div className="mt-1 text-xs text-gray-500">
                         <span className="text-red-500 font-semibold">{featured.category}</span>
                         <span className="mx-2">{featured.date}</span>
@@ -108,9 +109,9 @@ export default function HeroTopicsColumnClient({
             <ul className="mt-5 px-5 pb-5 divide-y divide-gray-200">
                 {list.map((it, i) => (
                     <li key={i} className="py-3">
-                        <a href={`/${it.slug}`} className="block text-sm font-semibold text-[#0e1d3d] leading-snug hover:text-red-500">
+                        <Link href={`/${it.slug}`} className="block text-sm font-semibold text-[#0e1d3d] leading-snug hover:text-red-500">
                             {it.title}
-                        </a>
+                        </Link>
                         <div className="mt-1 text-xs text-gray-500">
                             <span className="text-red-500 font-semibold">{it.category}</span>
                             <span className="ml-2">{it.date}</span>

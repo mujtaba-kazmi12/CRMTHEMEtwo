@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { getCurrentDateString } from "../services/date";
@@ -21,13 +22,15 @@ type HeaderProps = {
 function BrandMark() {
   return (
     <Link href="/" className="block select-none">
-      <span className="text-white font-serif text-[64px] sm:text-[72px] md:text-[96px] font-bold leading-none tracking-tight">
-        fn
-      </span>
-      <span
-        className="ml-1 inline-block w-2.5 h-2.5 rounded-full bg-red-500"
-        aria-hidden
-      />
+      <div className="relative w-[70px]  md:w-[160px] h-[70px]  md:h-[80px]">
+        <Image
+          src="/sitelogo.webp"
+          alt="Site Logo"
+          fill
+          className="object-contain"
+          priority
+        />
+      </div>
     </Link>
   );
 }

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type HeadlineCardProps = {
   imageSrc?: string;
@@ -64,7 +65,7 @@ export default function HeadlineCard({
   );
 
   if (slug) {
-    return <a href={`/${slug}`}>{content}</a>;
+    return <Link href={`/${slug}`}>{content}</Link>;
   }
 
   return content;

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type RightPost = {
     imageSrc?: string;
@@ -28,9 +29,9 @@ export default function HeadlinesRightColumnClient({ items }: HeadlinesRightColu
                             />
                         )}
                     </div>
-                    <a href={`/${it.slug}`} className="mt-3 block text-[#0e1d3d] font-semibold leading-snug hover:text-red-500">
+                    <Link href={`/${it.slug}`} className="mt-3 block text-[#0e1d3d] font-semibold leading-snug hover:text-red-500">
                         {it.title}
-                    </a>
+                    </Link>
                     <div className="mt-1 text-xs text-gray-500">
                         <span className="text-red-500 font-semibold">{it.category}</span>
                         {it.date && <span className="ml-2">{it.date}</span>}

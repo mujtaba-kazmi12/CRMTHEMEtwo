@@ -1,5 +1,6 @@
 import dbConnect from "@/lib/db";
 import Category from "@/models/Category";
+import Link from "next/link";
 
 type CategoryType = {
   _id: string;
@@ -35,9 +36,9 @@ export default async function PopularCategories({
         <ul className="mt-4 divide-y divide-gray-200 border-t border-b border-gray-200">
           {categories.map((c) => (
             <li key={c._id} className="flex items-center justify-between py-3 text-sm">
-              <a href={`/categories/${c.slug}`} className="uppercase tracking-wide text-[#0e1d3d] hover:text-red-500 transition-colors">
+              <Link href={`/categories/${c.slug}`} className="uppercase tracking-wide text-[#0e1d3d] hover:text-red-500 transition-colors">
                 {c.name}
-              </a>
+              </Link>
               {c.count && c.count > 0 ? (
                 <span className="text-[#0e1d3d]/70">{c.count}</span>
               ) : null}

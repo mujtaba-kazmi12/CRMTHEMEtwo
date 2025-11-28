@@ -6,10 +6,14 @@ import EditorsChoiceSection from "../components/EditorsChoiceSection";
 import RecentPostsSection from "../components/RecentPostsSection";
 import PopularCategories from "../components/PopularCategories";
 
+
+// Revalidate every 60 seconds (ISR)
+export const revalidate = 60;
+
 export default function Home() {
   return (
     <main className="bg-white">
-      {/* Hero Section */}
+      {/* Hero Sectionsssss */}
       <HeroSection />
       {/* Headlines Section */}
       <HeadlinesSection />

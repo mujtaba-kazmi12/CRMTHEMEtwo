@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type ListItem = {
     category: string;
     title: string;
@@ -24,9 +26,9 @@ export default function TwoColumnCategoryListClient({ items }: TwoColumnCategory
                     {left.map((it, i) => (
                         <li key={i} className="pb-4 border-b border-gray-200">
                             <div className="text-xs text-red-500 font-semibold">{it.category}</div>
-                            <a href={`/${it.slug}`} className="mt-1 block text-sm font-semibold text-[#0e1d3d] leading-snug hover:text-red-500">
+                            <Link href={`/${it.slug}`} className="mt-1 block text-sm font-semibold text-[#0e1d3d] leading-snug hover:text-red-500">
                                 {it.title}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -36,9 +38,9 @@ export default function TwoColumnCategoryListClient({ items }: TwoColumnCategory
                     {right.map((it, i) => (
                         <li key={i} className="pb-4 border-b border-gray-200">
                             <div className="text-xs text-red-500 font-semibold">{it.category}</div>
-                            <a href={`/${it.slug}`} className="mt-1 block text-sm font-semibold text-[#0e1d3d] leading-snug hover:text-red-500">
+                            <Link href={`/${it.slug}`} className="mt-1 block text-sm font-semibold text-[#0e1d3d] leading-snug hover:text-red-500">
                                 {it.title}
-                            </a>
+                            </Link>
                         </li>
                     ))}
                 </ul>

@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link';
 
 interface ArticleCardProps {
   title: string
@@ -19,7 +20,7 @@ export default function ArticleCard({ title, image, slug }: ArticleCardProps) {
   );
 
   if (slug) {
-    return <a href={`/${slug}`}>{content}</a>;
+    return <Link href={`/${slug}`}>{content}</Link>;
   }
 
   return content;

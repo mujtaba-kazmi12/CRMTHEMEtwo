@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 function Icon({ name, className = "" }: { name: string; className?: string }) {
   const base = "w-5 h-5 fill-current";
   switch (name) {
@@ -104,7 +107,14 @@ export default async function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-8">
         {/* Top row: logo + red divider + top links */}
         <div className="flex items-center gap-4">
-          <div className="text-4xl font-bold">fn</div>
+          <div className="relative w-[100px] h-[40px]">
+            <Image
+              src="/sitelogo.webp"
+              alt="Site Logo"
+              fill
+              className="object-contain"
+            />
+          </div>
           <div className="flex-1 h-[2px] bg-red-500" />
           <div className="flex items-center gap-6 ml-auto text-xs text-gray-300">
             {topLinks.map((l) => (
@@ -135,9 +145,9 @@ export default async function Footer() {
                 </li>
                 {categories.map((category) => (
                   <li key={category._id}>
-                    <a href={`/categories/${category.slug}`} className="hover:text-red-400">
+                    <Link href={`/categories/${category.slug}`} className="hover:text-red-400">
                       {category.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -152,9 +162,9 @@ export default async function Footer() {
               <ul className="space-y-3">
                 {posts.map((post) => (
                   <li key={post._id} className="text-sm text-gray-300">
-                    <a href={`/${post.slug}`} className="block hover:text-red-400">
+                    <Link href={`/${post.slug}`} className="block hover:text-red-400">
                       {post.blogContent.title}
-                    </a>
+                    </Link>
                     <div className="mt-2 h-[2px] w-20 bg-gray-500/50" />
                   </li>
                 ))}
@@ -170,11 +180,11 @@ export default async function Footer() {
               <p className="text-sm text-gray-300">
                 Recibe noticias importantes directamente en tu bandeja de entrada y mantente conectado.
               </p>
-              <form className="flex items-center gap-2">
+              <form className="flex flex-col gap-2">
                 <input
                   type="email"
                   placeholder="Tu dirección de correo electrónico"
-                  className="flex-1 rounded bg-white/10 border border-white/20 px-3 py-2 text-sm placeholder:text-gray-300 focus:outline-none focus:ring-1 focus:ring-red-500"
+                  className="w-full rounded bg-white/10 border border-white/20 px-3 py-2 text-sm placeholder:text-gray-300 focus:outline-none focus:ring-1 focus:ring-red-500"
                 />
                 <button
                   type="button"
